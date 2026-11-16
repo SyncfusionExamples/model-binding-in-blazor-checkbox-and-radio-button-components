@@ -1,5 +1,8 @@
-﻿@page "/"
-@using System.ComponentModel.DataAnnotations;
+@page "/"
+@using System.ComponentModel.DataAnnotations
+
+<PageTitle>Model Binding in Blazor Checkbox and Radio Button Components</PageTitle>
+
 <div>
     <div class="row">
         <SfCheckBox CssClass="e-align" Checked="@isChecked"
@@ -39,8 +42,8 @@
     private bool isChecked;
     private string value = "male";
 
-    public void ValueChanged(Microsoft.AspNetCore.Components.ChangeEventArgs args) => isChecked = (bool)args.Value;
-    public void OnSelect(Microsoft.AspNetCore.Components.ChangeEventArgs args) => value = (string)args.Value;
+    public void ValueChanged(Microsoft.AspNetCore.Components.ChangeEventArgs args) => isChecked = (bool)args.Value!;
+    public void OnSelect(Microsoft.AspNetCore.Components.ChangeEventArgs args) => value = (string)args.Value!;
 
     public Annotation Annotate = new Annotation();
 
